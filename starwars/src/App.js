@@ -31,6 +31,19 @@ class App extends Component {
       });
   };
 
+  getCharInfo = (URL, property) => {
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        return (data[property]);
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  };
+
   render() {
     return (
       <div className="App">
@@ -38,6 +51,7 @@ class App extends Component {
 
         <CharacterList
           starwarsChars={this.state.starwarsChars}
+          getCharInfo={this.getCharInfo}
         />
 
       </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function CharacterList({ starwarsChars }) {
-  console.log(starwarsChars);
+export default function CharacterList({ starwarsChars, getCharInfo }) {
+  // console.log(starwarsChars);
+  // console.log(getCharInfo('https://swapi.co/api/species/1/', 'name'));
   return (
     <StyledDiv>
       {
@@ -11,6 +12,7 @@ export default function CharacterList({ starwarsChars }) {
             <h2>{character.name}</h2>
             <p>Birth year: {character.birth_year}</p>
             <p>Gender: {character.gender}</p>
+            <p>Species: {getCharInfo(character.species, 'name')}</p>
           </StyledDivCard>
         )
       }
@@ -35,7 +37,7 @@ const StyledDivCard = styled.div`
   border: 1px solid rgb(188, 194, 192);
 
   :hover {
-    background-color: rgba(253, 233, 179, 0.6);
+    background-color: rgba(253, 233, 179, 0.4);
     cursor: pointer;
   }
 
