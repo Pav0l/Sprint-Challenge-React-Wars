@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import CharacterList from './components/CharacterList';
+
 
 class App extends Component {
   constructor() {
@@ -29,10 +31,29 @@ class App extends Component {
       });
   };
 
+  getCharInfo = (URL, property) => {
+    fetch(URL)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        return (data[property]);
+      })
+      .catch(err => {
+        throw new Error(err);
+      });
+  };
+
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+
+        <CharacterList
+          starwarsChars={this.state.starwarsChars}
+          getCharInfo={this.getCharInfo}
+        />
+
       </div>
     );
   }

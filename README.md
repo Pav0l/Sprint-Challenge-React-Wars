@@ -26,11 +26,29 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+  React JS is a Javascript library for building UI. To build the UI, React uses components - encapsulated pieces of UI, that update parts of the DOM.
+  React can update only those parts of DOM, that were changed by the user interaction. So it takes a lot of work off of the DOM, when it doesn't 
+  have to rerender the whole DOM on every user interaction.
+
 - [ ] What does it mean to _think_ in react?
+
+  It means thinking in components. breaking the UI into a structure of components, identifing the necessary state representation and where it should live
+  and creating that data flow into the static website.
+
+- [ ] Briefly describe some of the differences between a Class/Stateful component and a Functional/Presentational component. (copied from Answers.md)
+
+  Class and Function components are very similar. Class components have additional features, like `state`. Stateful components have both - `props` and `state` and the manage the `state`.
+  Stateless components only have `props` and no `state`. They are 'dumb' components not concerned with what are the methods passed from parent components doing. They just call them.
 
 - [ ] Describe state.
 
+  `state` is a JS object which holds information that influences the output of DOM render. `state` is managed within the componen (similar to variables declared inside functions).
+  `state` can be changed by users interaction.
+
 - [ ] Describe props.
+
+  `props` (short for 'properties') is a JS object which holds information that influences the output of DOM render. `props` get passed to the component (similar to functions parameters).
+  `props` are received from parent component. 
 
 ## Project Set Up
 
