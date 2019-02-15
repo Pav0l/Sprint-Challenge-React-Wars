@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function CharacterList({ starwarsChars }) {
-  // const charName = starwarsChars.map(char => char.name);
-
+  console.log(starwarsChars);
   return (
     <StyledDiv>
       {
@@ -11,7 +10,7 @@ export default function CharacterList({ starwarsChars }) {
           <StyledDivCard key={character.name}>
             <h2>{character.name}</h2>
             <p>Birth year: {character.birth_year}</p>
-            <p>{character.starships.forEach(ship=>ship.name)}</p>
+            <p>Gender: {character.gender}</p>
           </StyledDivCard>
         )
       }
@@ -29,12 +28,15 @@ const StyledDiv = styled.div`
 `;
 
 const StyledDivCard = styled.div`
-  background-color: rgba(188, 194, 192, 0.2);
+  background-color: rgba(188, 194, 192, 0.3);
   border-radius: 4px;
-  width: 33.3%;
-  margin-top: 1rem;
+  width: 300px;
+  margin: 1rem 1rem 0 0;
+  border: 1px solid rgb(188, 194, 192);
 
-  border: 1px solid rgb(188, 194, 192)
-
+  :hover {
+    background-color: rgba(253, 233, 179, 0.6);
+    cursor: pointer;
+  }
 
 `;
