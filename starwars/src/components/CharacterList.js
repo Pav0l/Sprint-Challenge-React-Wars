@@ -12,7 +12,7 @@ export default function CharacterList({ starwarsChars, getCharInfo }) {
             <h2>{character.name}</h2>
             <p>Birth year: {character.birth_year}</p>
             <p>Gender: {character.gender}</p>
-            <p>Species: {getCharInfo(character.species, 'name')}</p>
+            <p>Species: {getCharInfo(character.species.toString(), 'name')}</p>
           </StyledDivCard>
         )
       }
